@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs | OpenBao</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Cabecera con logo y menú -->
+<header class="nav">
+  <a class="brand" href="index.html"><img src="img/logo.svg" alt="OpenBao logo" width="34" height="34">OpenBao</a>
+  <button id="menu-btn" aria-label="Open menu">&#9776;</button>
+  <nav id="menu">
+    <a href="index.html" >Home</a>
+    <a href="docs.html" class="active">Docs</a>
+    <a href="ecosystem.html" >Ecosystem</a>
+    <a href="downloads.html" >Downloads</a>
+    <a href="community.html" >Community</a>
+  </nav>
+</header>
+<div class="hero"><small>THE LINUX FOUNDATION PROJECTS</small><h1>Documentation</h1><p>Learn the basics and get a server running in minutes.</p></div>
+<section>
+  <h2>Quick start</h2>
+  <p>Start a development server and store your first secret:</p>
+<pre>bao server -dev
+export BAO_ADDR='http://127.0.0.1:8200'
+bao kv put -mount=secret hello foo=bar
+bao kv get -mount=secret hello</pre>
+  <h2 style="margin-top:40px">Key concepts</h2>
+  <div class="grid">
+    <div class="card"><h3>Seal / Unseal</h3><p>Data is encrypted at rest; the server must be unsealed to read it.</p></div>
+    <div class="card"><h3>Secrets engines</h3><p>Plugins that store, generate or encrypt data.</p></div>
+    <div class="card"><h3>Auth methods</h3><p>Verify identities (tokens, OIDC, Kubernetes…).</p></div>
+    <div class="card"><h3>Policies</h3><p>Rules that define what each identity can access.</p></div>
+  </div>
+</section>
+<!-- Pie de página -->
+<footer>
+  <div>Copyright © 2026 OpenBao a Series of LF Projects, LLC</div>
+  <div>OpenBao is a Sandbox project at OpenSSF</div>
+  <div style="margin-top:10px"><a href="#">LinkedIn</a>|<a href="#">Bluesky</a>|<a href="#">YouTube</a>|<a href="#">Instagram</a>|<a href="#">Threads</a>|<a href="#">GitHub</a></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

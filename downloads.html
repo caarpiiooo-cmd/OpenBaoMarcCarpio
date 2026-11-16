@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloads | OpenBao</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Cabecera con logo y menú -->
+<header class="nav">
+  <a class="brand" href="index.html"><img src="img/logo.svg" alt="OpenBao logo" width="34" height="34">OpenBao</a>
+  <button id="menu-btn" aria-label="Open menu">&#9776;</button>
+  <nav id="menu">
+    <a href="index.html" >Home</a>
+    <a href="docs.html" >Docs</a>
+    <a href="ecosystem.html" >Ecosystem</a>
+    <a href="downloads.html" class="active">Downloads</a>
+    <a href="community.html" >Community</a>
+  </nav>
+</header>
+<div class="hero"><small>THE LINUX FOUNDATION PROJECTS</small><h1>Downloads</h1><p>Get OpenBao for your platform.</p></div>
+<section>
+  <h2>Packages</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Platform</th><th>Format</th><th></th></tr>
+    <tr><td>Linux (Debian/Ubuntu)</td><td>.deb</td><td><a class="btn btn-yellow" href="https://github.com/openbao/openbao/releases">Download</a></td></tr>
+    <tr><td>Linux (Fedora/RHEL)</td><td>.rpm</td><td><a class="btn btn-yellow" href="https://github.com/openbao/openbao/releases">Download</a></td></tr>
+    <tr><td>macOS / Windows</td><td>.tar.gz / .zip</td><td><a class="btn btn-yellow" href="https://github.com/openbao/openbao/releases">Download</a></td></tr>
+    <tr><td>Container</td><td>Docker image</td><td><button class="btn btn-grey" data-copy="cmd">Copy</button></td></tr>
+  </table></div>
+  <p>Docker command:</p>
+  <pre id="cmd">docker pull openbao/openbao</pre>
+</section>
+<!-- Pie de página -->
+<footer>
+  <div>Copyright © 2026 OpenBao a Series of LF Projects, LLC</div>
+  <div>OpenBao is a Sandbox project at OpenSSF</div>
+  <div style="margin-top:10px"><a href="#">LinkedIn</a>|<a href="#">Bluesky</a>|<a href="#">YouTube</a>|<a href="#">Instagram</a>|<a href="#">Threads</a>|<a href="#">GitHub</a></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

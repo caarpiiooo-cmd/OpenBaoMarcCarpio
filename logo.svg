@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fondo verde redondeado -->
+  <rect width="64" height="64" rx="14" fill="#326e5a"/>
+  <!-- Forma de bao (bollo) -->
+  <path d="M10 41c0-13 10-21 22-21s22 8 22 21c0 5-4 8-9 8H19c-5 0-9-3-9-8z" fill="#fff"/>
+  <!-- Cerradura = secretos -->
+  <circle cx="32" cy="34" r="4.5" fill="#326e5a"/>
+  <rect x="30.5" y="36" width="3" height="9" rx="1.5" fill="#326e5a"/>
+</svg>
