@@ -1,24 +1,19 @@
-// Menú hamburguesa (móvil)
-document.getElementById('menu-btn').addEventListener('click',
-  () => document.getElementById('menu').classList.toggle('open'));
+/* ==========================================================
+   OpenBao (imitación simplificada) - Script principal
+   Solo se encarga del menú desplegable en pantallas pequeñas
+   ========================================================== */
 
-// Botones "Copy" (página Downloads): copian el texto del <pre> indicado
-document.querySelectorAll('[data-copy]').forEach(b => {
-  b.addEventListener('click', async () => {
-    const txt = document.getElementById(b.dataset.copy).innerText;
-    try { await navigator.clipboard.writeText(txt); b.textContent = 'Copied!'; }
-    catch (e) { b.textContent = 'Select & copy'; }
-    setTimeout(() => b.textContent = 'Copy', 1500);
-  });
-});
+// Esperamos a que la página termine de cargar
+document.addEventListener("DOMContentLoaded", function () {
+  var boton = document.getElementById("boton-menu"); // botón hamburguesa
+  var menu = document.getElementById("menu");        // lista de enlaces
 
-// Formulario de contacto (página Community): validación y mensaje
-const form = document.getElementById('contact-form');
-if (form) form.addEventListener('submit', e => {
-  e.preventDefault();
-  const msg = document.getElementById('form-msg');
-  if (!form.email.value.includes('@') || form.message.value.trim().length < 5) {
-    msg.textContent = 'Please enter a valid email and a message.'; return;
+  if (boton && menu) {
+    // Al pulsar el botón se muestra u oculta el menú
+    boton.addEventListener("click", function () {
+      var abierto = menu.classList.toggle("abierto");
+      // Accesibilidad: avisamos a los lectores de pantalla del estado
+      boton.setAttribute("aria-expanded", abierto ? "true" : "false");
+    });
   }
-  msg.textContent = 'Thanks! Your message has been sent.'; form.reset();
 });

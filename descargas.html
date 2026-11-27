@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Codificación y adaptación a móviles (necesario para que sea responsivo) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to download and install OpenBao.">
+  <!-- Título de la pestaña del navegador -->
+  <title>Downloads | OpenBao</title>
+  <!-- Favicon (icono de la pestaña) -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Script del menú móvil (defer: se ejecuta cuando carga el HTML) -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- ===== CABECERA CON LOGO Y MENÚ (igual en todas las páginas) ===== -->
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="OpenBao logo">OpenBao</a>
+      <!-- Botón hamburguesa (solo se ve en móvil) -->
+      <button class="boton-menu" id="boton-menu" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="caracteristicas.html">Features</a></li>
+        <li><a href="documentacion.html">Docs</a></li>
+        <li><a href="descargas.html" class="activo" aria-current="page">Downloads</a></li>
+        <li><a href="comunidad.html">Community</a></li>
+          <li><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="cabecera-pagina"><div class="contenedor">
+      <h1>Downloads</h1>
+      <p>Choose the way that best fits your system. Always download OpenBao from the official sources.</p>
+    </div></div>
+
+    <section>
+      <div class="contenedor">
+        <h2>Install options</h2>
+        <div class="rejilla">
+          <article class="tarjeta"><h3>Binary releases</h3><p>Pre-built programs for several operating systems and architectures, published on GitHub.</p><br>
+            <a class="boton boton-azul" href="https://github.com/openbao/openbao/releases" target="_blank" rel="noopener">Go to releases</a></article>
+          <article class="tarjeta"><h3>DEB and RPM packages</h3><p>Package repository for Linux distributions, sponsored by Blendbyte and hosted on pkgs.openbao.org.</p><br>
+            <a class="boton boton-azul" href="https://pkgs.openbao.org" target="_blank" rel="noopener">pkgs.openbao.org</a></article>
+          <article class="tarjeta"><h3>Source code</h3><p>Download the code, read it and build it yourself.</p><br>
+            <a class="boton boton-azul" href="https://github.com/openbao/openbao" target="_blank" rel="noopener">View on GitHub</a></article>
+          <article class="tarjeta"><h3>Installation guide</h3><p>Step by step instructions in the official documentation.</p><br>
+            <a class="boton boton-azul" href="https://openbao.org/docs/install/" target="_blank" rel="noopener">Read the guide</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fondo-blanco">
+      <div class="contenedor">
+        <h2>Check your installation</h2>
+        <p class="intro">Once installed, open a terminal and check the version:</p>
+        <pre><code>bao version</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (igual en todas las páginas) ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Copyright &copy; 2026 OpenBao a Series of LF Projects, LLC. This is a simplified school replica of
+      <a href="https://openbao.org" target="_blank" rel="noopener">openbao.org</a> made for educational purposes.</p>
+      <div class="redes">
+        <a href="https://linkedin.com/company/openbao" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://bsky.app/profile/openbao-official.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.youtube.com/@OpenBao" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

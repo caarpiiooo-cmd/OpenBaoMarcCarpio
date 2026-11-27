@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Codificación y adaptación a móviles (necesario para que sea responsivo) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Introduction and quick start for OpenBao.">
+  <!-- Título de la pestaña del navegador -->
+  <title>Docs | OpenBao</title>
+  <!-- Favicon (icono de la pestaña) -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Script del menú móvil (defer: se ejecuta cuando carga el HTML) -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- ===== CABECERA CON LOGO Y MENÚ (igual en todas las páginas) ===== -->
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="OpenBao logo">OpenBao</a>
+      <!-- Botón hamburguesa (solo se ve en móvil) -->
+      <button class="boton-menu" id="boton-menu" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="caracteristicas.html">Features</a></li>
+        <li><a href="documentacion.html" class="activo" aria-current="page">Docs</a></li>
+        <li><a href="descargas.html">Downloads</a></li>
+        <li><a href="comunidad.html">Community</a></li>
+          <li><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="cabecera-pagina"><div class="contenedor">
+      <h1>Documentation</h1>
+      <p>A short introduction to OpenBao and a quick start to try it on your own computer.</p>
+    </div></div>
+
+    <section>
+      <div class="contenedor">
+        <h2>What is OpenBao?</h2>
+        <p class="intro">OpenBao is an open source secrets manager. It stores and encrypts sensitive data such as passwords, certificates and keys, and gives access to them through an API and a command line tool.</p>
+        <div class="rejilla tres">
+          <article class="tarjeta"><h3>1. Install</h3><p>Get the program for your system from the Downloads page.</p></article>
+          <article class="tarjeta"><h3>2. Start</h3><p>Run the server in development mode to try it out locally.</p></article>
+          <article class="tarjeta"><h3>3. Store</h3><p>Write your first secret and read it back.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fondo-blanco">
+      <div class="contenedor">
+        <h2>Quick start (example)</h2>
+        <p class="intro">Development mode is only for learning: data is kept in memory and is not secure for real use.</p>
+        <ol class="pasos">
+          <li>Start the development server in a terminal:</li>
+        </ol>
+        <pre><code>bao server -dev</code></pre>
+        <ol class="pasos" start="2">
+          <li>In another terminal, point the client to the server:</li>
+        </ol>
+        <pre><code>export BAO_ADDR='http://127.0.0.1:8200'</code></pre>
+        <ol class="pasos" start="3">
+          <li>Save and read a secret:</li>
+        </ol>
+        <pre><code>bao kv put -mount=secret demo password=1234
+bao kv get -mount=secret demo</code></pre>
+        <p class="intro">For the complete and up-to-date guide visit the
+        <a href="https://openbao.org/docs/" target="_blank" rel="noopener">official documentation</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="contenedor">
+        <h2>Useful links</h2>
+        <div class="tabla-scroll">
+          <table>
+            <thead><tr><th>Resource</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><a href="https://openbao.org/docs/what-is-openbao/" target="_blank" rel="noopener">What is OpenBao?</a></td><td>Overview of the project</td></tr>
+              <tr><td><a href="https://openbao.org/docs/install/" target="_blank" rel="noopener">Install</a></td><td>How to install OpenBao</td></tr>
+              <tr><td><a href="https://openbao.org/docs/api/" target="_blank" rel="noopener">API</a></td><td>HTTP API reference</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (igual en todas las páginas) ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Copyright &copy; 2026 OpenBao a Series of LF Projects, LLC. This is a simplified school replica of
+      <a href="https://openbao.org" target="_blank" rel="noopener">openbao.org</a> made for educational purposes.</p>
+      <div class="redes">
+        <a href="https://linkedin.com/company/openbao" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://bsky.app/profile/openbao-official.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.youtube.com/@OpenBao" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

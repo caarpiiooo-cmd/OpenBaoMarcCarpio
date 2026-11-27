@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Codificación y adaptación a móviles (necesario para que sea responsivo) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the OpenBao community and meet its supporters.">
+  <!-- Título de la pestaña del navegador -->
+  <title>Community | OpenBao</title>
+  <!-- Favicon (icono de la pestaña) -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Script del menú móvil (defer: se ejecuta cuando carga el HTML) -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- ===== CABECERA CON LOGO Y MENÚ (igual en todas las páginas) ===== -->
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="OpenBao logo">OpenBao</a>
+      <!-- Botón hamburguesa (solo se ve en móvil) -->
+      <button class="boton-menu" id="boton-menu" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="caracteristicas.html">Features</a></li>
+        <li><a href="documentacion.html">Docs</a></li>
+        <li><a href="descargas.html">Downloads</a></li>
+        <li><a href="comunidad.html" class="activo" aria-current="page">Community</a></li>
+          <li><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="cabecera-pagina"><div class="contenedor">
+      <h1>Community</h1>
+      <p>OpenBao is built by a community under open governance principles. Here is how to join and who supports it.</p>
+    </div></div>
+
+    <section>
+      <div class="contenedor">
+        <h2>Get involved</h2>
+        <p class="intro">The best way to support the project is to contribute. Read the contribution guide, submit issues and join the discussion.</p>
+        <a class="boton boton-azul" href="https://github.com/openbao/openbao/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribution guide</a>
+        <a class="boton boton-azul" href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub repository</a>
+      </div>
+    </section>
+
+    <section class="fondo-blanco">
+      <div class="contenedor">
+        <h2>Supporters</h2>
+        <p class="intro">Companies, individuals or other entities who actively sponsor the development of OpenBao, with code, non-code contributions or financial support.</p>
+        <div class="rejilla tres">
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">BB</div>
+            <h3>Blendbyte</h3>
+            <p>Sponsors OpenBao's RPM &amp; DEB package repository hosted on pkgs.openbao.org.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">P</div>
+            <h3>Proton</h3>
+            <p>Sponsors its collaboration suite (email and calendar) for OpenBao maintainers.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">LR</div>
+            <h3>Liquid Reply</h3>
+            <p>Commits to OpenBao through core contributions, and by fostering community advocacy and growth.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">GL</div>
+            <h3>GitLab</h3>
+            <p>Contributes to development and open-source community efforts of OpenBao.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">CP</div>
+            <h3>ControlPlane</h3>
+            <p>Contributes to development and open-source community leadership efforts of OpenBao.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">FL</div>
+            <h3>Fermilab</h3>
+            <p>Participates in OpenBao development, in particular for the JWT/OIDC authentication module and for packaging in EPEL.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">AD</div>
+            <h3>Adfinis</h3>
+            <p>Commits to OpenBao through core contributions, open source leadership, and by fostering community advocacy and growth.</p>
+          </article>
+          <article class="tarjeta patrocinador">
+            <div class="sigla" aria-hidden="true">SAP</div>
+            <h3>SAP</h3>
+            <p>Several developers from/on behalf of SAP SE work full time on OpenBao.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contenedor">
+        <h2>Follow us</h2>
+        <p class="intro">
+          <a href="https://linkedin.com/company/openbao" target="_blank" rel="noopener">LinkedIn</a> |
+          <a href="https://bsky.app/profile/openbao-official.bsky.social" target="_blank" rel="noopener">Bluesky</a> |
+          <a href="https://www.youtube.com/@OpenBao" target="_blank" rel="noopener">YouTube</a> |
+          <a href="https://www.instagram.com/openbao.official/" target="_blank" rel="noopener">Instagram</a> |
+          <a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (igual en todas las páginas) ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Copyright &copy; 2026 OpenBao a Series of LF Projects, LLC. This is a simplified school replica of
+      <a href="https://openbao.org" target="_blank" rel="noopener">openbao.org</a> made for educational purposes.</p>
+      <div class="redes">
+        <a href="https://linkedin.com/company/openbao" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://bsky.app/profile/openbao-official.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.youtube.com/@OpenBao" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

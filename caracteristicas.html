@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Codificación y adaptación a móviles (necesario para que sea responsivo) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use cases of OpenBao: secret storage, dynamic secrets, encryption, identity-based access, leasing and revocation.">
+  <!-- Título de la pestaña del navegador -->
+  <title>Features | OpenBao</title>
+  <!-- Favicon (icono de la pestaña) -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Script del menú móvil (defer: se ejecuta cuando carga el HTML) -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- ===== CABECERA CON LOGO Y MENÚ (igual en todas las páginas) ===== -->
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="OpenBao logo">OpenBao</a>
+      <!-- Botón hamburguesa (solo se ve en móvil) -->
+      <button class="boton-menu" id="boton-menu" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="caracteristicas.html" class="activo" aria-current="page">Features</a></li>
+        <li><a href="documentacion.html">Docs</a></li>
+        <li><a href="descargas.html">Downloads</a></li>
+        <li><a href="comunidad.html">Community</a></li>
+          <li><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="cabecera-pagina"><div class="contenedor">
+      <h1>Features</h1>
+      <p>What you can do with OpenBao: store secrets, generate them on demand, encrypt data and control who can access what.</p>
+    </div></div>
+    <section>
+      <div class="contenedor">
+        <div class="rejilla tres">
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🔐</div>
+          <h3>Secure Secret Storage</h3>
+          <p>Arbitrary key/value secrets can be stored in OpenBao. OpenBao encrypts these secrets prior to writing them to persistent storage, so gaining access to the raw storage is not enough to access your secrets.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">⚡</div>
+          <h3>Dynamic Secrets</h3>
+          <p>OpenBao can generate secrets on-demand for some systems, such as Kubernetes or SQL databases. After creating these dynamic secrets, OpenBao will also automatically revoke them after the lease is up.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🗝️</div>
+          <h3>Data Encryption</h3>
+          <p>OpenBao provides encryption as a service with centralized key management to simplify encrypting data in transit and stored across clouds and datacenters.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🪪</div>
+          <h3>Identity based access</h3>
+          <p>Organizations need a way to manage identity sprawl across clouds, services and systems. OpenBao uses a unified ACL system to broker access to systems and secrets and merges identities across providers.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">⏳</div>
+          <h3>Leasing and Renewal</h3>
+          <p>All secrets in OpenBao have a lease associated with them. At the end of the lease, OpenBao will automatically revoke that secret. Clients can renew leases via built-in renew APIs.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🚫</div>
+          <h3>Revocation</h3>
+          <p>OpenBao has built-in support for secret revocation. It can revoke single secrets, or a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section class="fondo-blanco">
+      <div class="contenedor">
+        <h2>Why does it matter?</h2>
+        <p class="intro">Passwords, API keys and certificates are the keys to your systems. Keeping them in one protected place, with short lifetimes and automatic revocation, reduces the damage if one of them leaks.</p>
+        <a class="boton boton-azul" href="documentacion.html">Read the docs</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (igual en todas las páginas) ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Copyright &copy; 2026 OpenBao a Series of LF Projects, LLC. This is a simplified school replica of
+      <a href="https://openbao.org" target="_blank" rel="noopener">openbao.org</a> made for educational purposes.</p>
+      <div class="redes">
+        <a href="https://linkedin.com/company/openbao" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://bsky.app/profile/openbao-official.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.youtube.com/@OpenBao" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

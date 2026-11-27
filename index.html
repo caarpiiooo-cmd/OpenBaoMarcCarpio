@@ -1,73 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | OpenBao</title>
-  <!-- Favicon -->
+  <!-- Codificación y adaptación a móviles (necesario para que sea responsivo) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenBao is an open source, community-driven fork of HashiCorp Vault managed by the Linux Foundation to manage, store, and distribute sensitive data.">
+  <!-- Título de la pestaña del navegador -->
+  <title>OpenBao</title>
+  <!-- Favicon (icono de la pestaña) -->
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <!-- Hoja de estilos -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Script del menú móvil (defer: se ejecuta cuando carga el HTML) -->
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-<!-- Cabecera con logo y menú -->
-<header class="nav">
-  <a class="brand" href="index.html"><img src="img/logo.svg" alt="OpenBao logo" width="34" height="34">OpenBao</a>
-  <button id="menu-btn" aria-label="Open menu">&#9776;</button>
-  <nav id="menu">
-    <a href="index.html" class="active">Home</a>
-    <a href="docs.html" >Docs</a>
-    <a href="ecosystem.html" >Ecosystem</a>
-    <a href="downloads.html" >Downloads</a>
-    <a href="community.html" >Community</a>
-  </nav>
-</header>
-<div class="hero"><small>THE LINUX FOUNDATION PROJECTS</small><h1>Manage, store, and distribute sensitive data with OpenBao</h1><p>OpenBao is an open source, community-driven secrets manager and fork of Vault managed by the Linux Foundation’s OpenSSF.</p><a class="btn btn-grey" href="docs.html">What is OpenBao?</a><a class="btn btn-yellow" href="downloads.html">Try it out!</a></div>
-<!-- Casos de uso -->
-<section>
-  <h2>Use cases</h2>
-  <div class="grid">
-    <div class="card"><h3>Secure Secret Storage</h3><p>Key/value secrets are encrypted before being written to storage.</p></div>
-    <div class="card"><h3>Dynamic Secrets</h3><p>Generate secrets on demand and revoke them when the lease is up.</p></div>
-    <div class="card"><h3>Data Encryption</h3><p>Encryption as a service with centralized key management.</p></div>
-    <div class="card"><h3>Identity based access</h3><p>A unified ACL system brokers access across providers.</p></div>
-    <div class="card"><h3>Leasing and Renewal</h3><p>Every secret has a lease and can be renewed via the API.</p></div>
-    <div class="card"><h3>Revocation</h3><p>Revoke single secrets or whole trees of secrets.</p></div>
-  </div>
-</section>
-<!-- FAQ desplegable (HTML nativo, sin JS) -->
-<section>
-  <h2>Frequently Asked Questions</h2>
-  <details open><summary>What is OpenBao’s mission statement?</summary><p>To maintain and improve a software solution to manage, store, and distribute sensitive data including secrets, certificates, and keys, under an OSI-approved open-source license.</p></details>
-  <details><summary>What is the status of the fork?</summary><p>Active, with regular releases.</p></details>
-  <details><summary>Which version of HashiCorp Vault are you planning to fork from?</summary><p>The last version released under the MPL 2.0 license.</p></details>
-  <details><summary>How do I get involved?</summary><p>Visit the <a href="community.html">Community</a> page.</p></details>
-  <details><summary>Will the existing MPL 2.0 licensed code be migrated to another license?</summary><p>No, it stays under MPL 2.0.</p></details>
-</section>
-<section class="center">
-  <h2>Contributing</h2>
-  <p>The best way to support the OpenBao project is to contribute. The contribution guide explains recommended practices, how to submit issues and how to join the discussion.</p>
-  <a class="btn btn-yellow" href="community.html">Get involved!</a>
-</section>
-<section>
-  <h2>Supporters</h2>
-  <div class="grid">
-    <div class="card"><h3>Blendbyte</h3><p>Sponsors the RPM &amp; DEB package repository.</p></div>
-    <div class="card"><h3>Liquid Reply</h3><p>Core contributions and community advocacy.</p></div>
-    <div class="card"><h3>ControlPlane</h3><p>Development and open-source leadership.</p></div>
-    <div class="card"><h3>Fermilab</h3><p>JWT/OIDC module and EPEL packaging.</p></div>
-    <div class="card"><h3>Adfinis</h3><p>Core contributions and community growth.</p></div>
-    <div class="card"><h3>Proton</h3><p>Collaboration suite for maintainers.</p></div>
-    <div class="card"><h3>GitLab</h3><p>Development and community efforts.</p></div>
-    <div class="card"><h3>SAP</h3><p>Developers working full time on OpenBao.</p></div>
-  </div>
-  <p class="center"><a href="ecosystem.html">See more on the Ecosystem page</a></p>
-</section>
-<!-- Pie de página -->
-<footer>
-  <div>Copyright © 2026 OpenBao a Series of LF Projects, LLC</div>
-  <div>OpenBao is a Sandbox project at OpenSSF</div>
-  <div style="margin-top:10px"><a href="#">LinkedIn</a>|<a href="#">Bluesky</a>|<a href="#">YouTube</a>|<a href="#">Instagram</a>|<a href="#">Threads</a>|<a href="#">GitHub</a></div>
-</footer>
-<script src="js/main.js"></script>
+  <!-- ===== CABECERA CON LOGO Y MENÚ (igual en todas las páginas) ===== -->
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="OpenBao logo">OpenBao</a>
+      <!-- Botón hamburguesa (solo se ve en móvil) -->
+      <button class="boton-menu" id="boton-menu" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu">
+        <li><a href="index.html" class="activo" aria-current="page">Home</a></li>
+        <li><a href="caracteristicas.html">Features</a></li>
+        <li><a href="documentacion.html">Docs</a></li>
+        <li><a href="descargas.html">Downloads</a></li>
+        <li><a href="comunidad.html">Community</a></li>
+          <li><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ===== PORTADA (HERO) ===== -->
+    <div class="hero">
+      <div class="contenedor">
+        <img class="hero-logo" src="img/logo.svg" alt="">
+        <h1>Manage, store, and distribute sensitive data with OpenBao</h1>
+        <p>OpenBao is an open source, community-driven secrets manager and fork of Vault managed by the Linux Foundation's OpenSSF.</p>
+        <a class="boton boton-principal" href="documentacion.html">What is OpenBao?</a>
+        <a class="boton boton-secundario" href="descargas.html">Try it out!</a>
+      </div>
+    </div>
+
+    <!-- ===== CASOS DE USO: 6 tarjetas (1 columna en móvil, 2 en tablet, 3 en escritorio) ===== -->
+    <section>
+      <div class="contenedor">
+        <h2>Use cases</h2>
+        <div class="rejilla tres">
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🔐</div>
+          <h3>Secure Secret Storage</h3>
+          <p>Arbitrary key/value secrets can be stored in OpenBao. OpenBao encrypts these secrets prior to writing them to persistent storage, so gaining access to the raw storage is not enough to access your secrets.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">⚡</div>
+          <h3>Dynamic Secrets</h3>
+          <p>OpenBao can generate secrets on-demand for some systems, such as Kubernetes or SQL databases. After creating these dynamic secrets, OpenBao will also automatically revoke them after the lease is up.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🗝️</div>
+          <h3>Data Encryption</h3>
+          <p>OpenBao provides encryption as a service with centralized key management to simplify encrypting data in transit and stored across clouds and datacenters.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🪪</div>
+          <h3>Identity based access</h3>
+          <p>Organizations need a way to manage identity sprawl across clouds, services and systems. OpenBao uses a unified ACL system to broker access to systems and secrets and merges identities across providers.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">⏳</div>
+          <h3>Leasing and Renewal</h3>
+          <p>All secrets in OpenBao have a lease associated with them. At the end of the lease, OpenBao will automatically revoke that secret. Clients can renew leases via built-in renew APIs.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🚫</div>
+          <h3>Revocation</h3>
+          <p>OpenBao has built-in support for secret revocation. It can revoke single secrets, or a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PREGUNTAS FRECUENTES (desplegables con <details>) ===== -->
+    <section class="fondo-blanco">
+      <div class="contenedor">
+        <h2>Frequently Asked Questions</h2>
+      <details open>
+        <summary>What is OpenBao's mission statement?</summary>
+        <p>OpenBao exists to maintain and improve a software solution to manage, store, and distribute sensitive data including secrets, certificates, and keys. The OpenBao community will provide this software under an OSI-approved open-source license, led by a community run under open governance principles.</p>
+      </details>
+      <details>
+        <summary>What is the status of the fork?</summary>
+        <p>OpenBao is an open source, community-driven fork of HashiCorp Vault, managed by the Linux Foundation. See the <a href="comunidad.html">Community</a> page to follow its progress.</p>
+      </details>
+      <details>
+        <summary>Which version of HashiCorp Vault are you planning to fork from?</summary>
+        <p>OpenBao is based on the last version of Vault released under the MPL 2.0 license. Check the official documentation for the exact details.</p>
+      </details>
+      <details>
+        <summary>How do I get involved?</summary>
+        <p>The best way is to contribute: open issues, join the discussion and send code through the project's GitHub repository. See the <a href="comunidad.html">Community</a> page.</p>
+      </details>
+      <details>
+        <summary>Will the existing MPL 2.0 licensed code be migrated to another license?</summary>
+        <p>No. The OpenBao project keeps the existing MPL 2.0 licensed code under its open-source license. Check the official project policies for details.</p>
+      </details>
+      </div>
+    </section>
+
+    <!-- ===== CÓMO CONTRIBUIR ===== -->
+    <section>
+      <div class="contenedor">
+        <h2>Contributing</h2>
+        <p class="intro">The best way to support the OpenBao project is to contribute. The contribution guide explains recommended practices, how to submit issues, how to get involved in the discussion and much more.</p>
+        <a class="boton boton-azul" href="https://github.com/openbao/openbao/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Get involved!</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA (igual en todas las páginas) ===== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Copyright &copy; 2026 OpenBao a Series of LF Projects, LLC. This is a simplified school replica of
+      <a href="https://openbao.org" target="_blank" rel="noopener">openbao.org</a> made for educational purposes.</p>
+      <div class="redes">
+        <a href="https://linkedin.com/company/openbao" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://bsky.app/profile/openbao-official.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.youtube.com/@OpenBao" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

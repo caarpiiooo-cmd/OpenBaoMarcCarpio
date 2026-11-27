@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Fondo verde redondeado -->
-  <rect width="64" height="64" rx="14" fill="#326e5a"/>
-  <!-- Forma de bao (bollo) -->
-  <path d="M10 41c0-13 10-21 22-21s22 8 22 21c0 5-4 8-9 8H19c-5 0-9-3-9-8z" fill="#fff"/>
-  <!-- Cerradura = secretos -->
-  <circle cx="32" cy="34" r="4.5" fill="#326e5a"/>
-  <rect x="30.5" y="36" width="3" height="9" rx="1.5" fill="#326e5a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="OpenBao logo">
+  <!-- Fondo: cuadrado redondeado azul oscuro -->
+  <rect width="64" height="64" rx="14" fill="#0f2b5b"/>
+  <!-- Puerta de la caja fuerte: anillo exterior -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#5aa9ff" stroke-width="5"/>
+  <!-- Centro de la puerta -->
+  <circle cx="32" cy="32" r="12" fill="#1d4ed8"/>
+  <!-- Ojo de la cerradura -->
+  <circle cx="32" cy="29" r="4" fill="#ffffff"/>
+  <path d="M30 31 h4 l1.5 9 h-7 z" fill="#ffffff"/>
 </svg>

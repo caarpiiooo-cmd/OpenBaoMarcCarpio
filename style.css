@@ -1,57 +1,125 @@
-/* ===== Variables de color (paleta tipo OpenBao) ===== */
-:root{--green:#326e5a;--yellow:#ffb800;--text:#1a1a1a;--muted:#555;--line:#e5e7eb;--grey:#f3f4f6}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);line-height:1.6}
-a{color:var(--green)}
-section{max-width:960px;margin:0 auto;padding:40px 20px}
-h2{text-align:center;font-size:2rem;margin:0 0 24px}
+/* ==========================================================
+   OpenBao (imitación simplificada) - Hoja de estilos única
+   Diseño "mobile first": primero móvil, luego pantallas grandes
+   ========================================================== */
 
-/* ===== Cabecera / navegación ===== */
-.nav{display:flex;align-items:center;gap:20px;padding:10px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:10;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--text);text-decoration:none}
-#menu{display:flex;gap:18px}
-#menu a{color:var(--text);text-decoration:none;font-size:.9rem}
-#menu a:hover,#menu a.active{color:var(--green);font-weight:600}
-#menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;font-size:1.3rem;padding:2px 10px;cursor:pointer}
+/* ---- 1. Variables de color y medidas (fáciles de cambiar) ---- */
+:root {
+  --azul-oscuro: #0b1f44;   /* fondo de cabecera y pie */
+  --azul: #1d4ed8;          /* color principal (botones, enlaces) */
+  --azul-claro: #5aa9ff;    /* detalles y acentos */
+  --fondo: #f5f8ff;         /* fondo general de la página */
+  --blanco: #ffffff;
+  --texto: #1b2540;         /* texto principal */
+  --gris: #5b6785;          /* texto secundario */
+  --borde: #dbe3f5;         /* líneas y bordes suaves */
+  --radio: 12px;            /* esquinas redondeadas */
+  --ancho-max: 1100px;      /* ancho máximo del contenido */
+}
 
-/* ===== Hero verde ===== */
-.hero{background:var(--green);color:#fff;text-align:center;padding:56px 20px}
-.hero small{opacity:.8;letter-spacing:1px}
-.hero h1{font-size:clamp(1.7rem,5vw,2.6rem);max-width:700px;margin:10px auto 14px;line-height:1.2}
-.hero p{max-width:600px;margin:0 auto 22px;font-size:1.05rem}
+/* ---- 2. Reset básico ---- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; display: block; } /* imágenes responsivas */
+a { color: var(--azul); }
+.contenedor { width: 100%; max-width: var(--ancho-max); margin: 0 auto; padding: 0 1.25rem; }
 
-/* ===== Botones ===== */
-.btn{display:inline-block;padding:9px 18px;border-radius:4px;font-weight:600;font-size:.9rem;text-decoration:none;margin:4px;border:0;cursor:pointer;color:var(--text)}
-.btn-grey{background:#eceff1}.btn-yellow{background:var(--yellow)}.btn:hover{filter:brightness(.95)}
+/* ---- 3. Cabecera y menú de navegación ---- */
+.cabecera { background: var(--azul-oscuro); position: sticky; top: 0; z-index: 10; }
+.cabecera .contenedor {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 64px; flex-wrap: wrap;
+}
+.marca { display: flex; align-items: center; gap: .6rem; color: var(--blanco); text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+.marca img { width: 36px; height: 36px; }
 
-/* ===== Tarjetas y rejilla ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.card{border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-.card h3{margin:0 0 8px;font-size:1.05rem}
-.card p{margin:0;font-size:.9rem;color:var(--muted)}
+/* Botón hamburguesa: solo visible en móvil */
+.boton-menu {
+  background: none; border: 1px solid var(--azul-claro); color: var(--blanco);
+  font-size: 1.4rem; padding: .15rem .6rem; border-radius: 8px; cursor: pointer;
+}
+/* Menú: oculto en móvil hasta pulsar el botón (clase "abierto") */
+.menu { display: none; width: 100%; list-style: none; padding-bottom: .75rem; }
+.menu.abierto { display: block; }
+.menu a { display: block; color: var(--blanco); text-decoration: none; padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+.menu a:hover, .menu a.activo { color: var(--azul-claro); }
 
-/* ===== FAQ ===== */
-details{border-bottom:1px solid var(--line);padding:12px 0;max-width:680px;margin:0 auto}
-summary{cursor:pointer;font-weight:600}
-details p{color:var(--muted);margin:8px 0 0;font-size:.92rem}
+/* ---- 4. Portada (hero) y cabeceras de página ---- */
+.hero { background: linear-gradient(135deg, var(--azul-oscuro), #163a7a); color: var(--blanco); text-align: center; padding: 3.5rem 0; }
+.hero h1 { font-size: 1.9rem; line-height: 1.2; max-width: 22ch; margin: 0 auto 1rem; }
+.hero p { max-width: 60ch; margin: 0 auto 1.5rem; color: #d6e4ff; }
+.hero-logo { width: 96px; height: 96px; margin: 0 auto 1.25rem; }
+.cabecera-pagina { background: var(--azul-oscuro); color: var(--blanco); padding: 2.5rem 0; }
+.cabecera-pagina h1 { margin-bottom: .5rem; }
+.cabecera-pagina p { color: #d6e4ff; max-width: 65ch; }
 
-/* ===== Código, tabla, formulario ===== */
-pre{background:#1f2933;color:#e6edf3;padding:14px;border-radius:8px;overflow-x:auto;font-size:.85rem}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:.92rem}
-th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}
-form{max-width:520px;margin:0 auto;display:grid;gap:12px}
-input,textarea{padding:10px;border:1px solid #ccc;border-radius:6px;font:inherit;width:100%}
-#form-msg{text-align:center;font-weight:600;color:var(--green)}
-.center{text-align:center}.center p{max-width:600px;margin:0 auto 16px;color:var(--muted)}
+/* ---- 5. Botones ---- */
+.boton { display: inline-block; padding: .7rem 1.4rem; border-radius: 999px; font-weight: 600; text-decoration: none; margin: .25rem; }
+.boton-principal { background: var(--azul-claro); color: var(--azul-oscuro); }
+.boton-secundario { border: 2px solid var(--azul-claro); color: var(--blanco); }
+.boton-principal:hover { background: var(--blanco); }
+.boton-secundario:hover { background: rgba(255,255,255,.1); }
+.boton-azul { background: var(--azul); color: var(--blanco); }
+.boton-azul:hover { background: var(--azul-oscuro); }
 
-/* ===== Pie ===== */
-footer{background:var(--grey);text-align:center;padding:28px 20px;font-size:.85rem;color:var(--muted)}
-footer a{margin:0 5px}
+/* ---- 6. Secciones y tarjetas ---- */
+section { padding: 3rem 0; }
+section h2 { font-size: 1.6rem; margin-bottom: 1.25rem; color: var(--azul-oscuro); }
+.intro { color: var(--gris); max-width: 70ch; margin-bottom: 1.5rem; }
 
-/* ===== Responsive: móvil ===== */
-@media (max-width:700px){
-  #menu-btn{display:block}
-  #menu{display:none;flex-direction:column;width:100%;gap:10px;padding-bottom:8px}
-  #menu.open{display:flex}
+/* Rejilla: 1 columna en móvil, más columnas en pantallas mayores (ver media queries) */
+.rejilla { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+.tarjeta { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.4rem; }
+.tarjeta h3 { color: var(--azul); margin-bottom: .5rem; font-size: 1.1rem; }
+.tarjeta p { color: var(--gris); }
+.tarjeta .icono { font-size: 1.8rem; margin-bottom: .5rem; }
+.fondo-blanco { background: var(--blanco); }
+
+/* ---- 7. Preguntas frecuentes (elemento <details>, funciona sin JavaScript) ---- */
+details { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1rem 1.25rem; margin-bottom: .75rem; }
+summary { cursor: pointer; font-weight: 600; color: var(--azul-oscuro); }
+details p { margin-top: .75rem; color: var(--gris); }
+
+/* ---- 8. Patrocinadores ---- */
+.patrocinador { text-align: center; }
+.patrocinador .sigla { width: 64px; height: 64px; border-radius: 50%; background: var(--azul-oscuro); color: var(--azul-claro); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto .75rem; }
+
+/* ---- 9. Tablas y bloques de código (Documentación y Descargas) ---- */
+.tabla-scroll { overflow-x: auto; } /* la tabla se desplaza en móvil sin romper la página */
+table { width: 100%; border-collapse: collapse; background: var(--blanco); border-radius: var(--radio); overflow: hidden; }
+th, td { padding: .8rem 1rem; text-align: left; border-bottom: 1px solid var(--borde); }
+th { background: var(--azul-oscuro); color: var(--blanco); }
+pre { background: #0d1630; color: #cfe1ff; padding: 1rem; border-radius: var(--radio); overflow-x: auto; margin: .75rem 0 1.25rem; font-size: .9rem; }
+code { font-family: Consolas, "Courier New", monospace; }
+ol.pasos { padding-left: 1.25rem; }
+ol.pasos li { margin-bottom: .6rem; }
+
+/* ---- 10. Pie de página ---- */
+.pie { background: var(--azul-oscuro); color: #c3d4f5; padding: 2rem 0; font-size: .9rem; }
+.pie a { color: var(--azul-claro); }
+.pie .redes { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+
+/* ==========================================================
+   MEDIA QUERIES: adaptan el diseño a pantallas más grandes
+   ========================================================== */
+
+/* Tablet (a partir de 700px): 2 columnas */
+@media (min-width: 700px) {
+  .rejilla { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 2.6rem; }
+}
+
+/* Escritorio (a partir de 960px): menú horizontal y 3 columnas */
+@media (min-width: 960px) {
+  .boton-menu { display: none; }            /* se oculta la hamburguesa */
+  .menu { display: flex !important; width: auto; gap: 1.5rem; padding: 0; }
+  .menu a { border: none; padding: 0; }
+  .rejilla.tres { grid-template-columns: repeat(3, 1fr); }
+  .hero { padding: 5rem 0; }
 }
